@@ -67,8 +67,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
             Log.i("gt","as");
             // get the reference of item view's
-            person = (TextView) itemView.findViewById(R.id.person);
-            job = (TextView) itemView.findViewById(R.id.occupation);
+            person = (TextView) itemView.findViewById(R.id.quote);
+            job = (TextView) itemView.findViewById(R.id.author);
         }
     }
 }
