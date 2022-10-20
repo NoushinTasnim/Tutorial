@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:textColor="#000"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Title"
             android:textSize="20sp" />
 
         <TextView
