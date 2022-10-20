@@ -13,14 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
-    ArrayList<String> people;
-    ArrayList<String> occupation;
+    ArrayList<String> quotes;
+    ArrayList<String> authors;
     Context context;
 
-    public CustomAdapter(Context context, ArrayList<String> people, ArrayList<String> occupation) {
+    public CustomAdapter(Context context, ArrayList<String> quotes, ArrayList<String> authors) {
         this.context = context;
-        this.people = people;
-        this.occupation = occupation;
+        this.quotes = quotes;
+        this.authors = authors;
 
         Log.i("here","nopes");
     }
@@ -37,10 +37,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         // set the data in items
-        holder.person.setText(people.get(position));
-        holder.job.setText(occupation.get(position));
+        holder.quote.setText(quotes.get(position));
+        holder.author.setText(authors.get(position));
 
-        String p = people.get(position);
+        String p = quotes.get(position);
 
         Log.i("hey", p);
 
@@ -56,20 +56,40 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return people.size();
+        return quotes.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView person, job;// init the item view's
+        TextView quote, author;// init the item view's
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             Log.i("gt","as");
             // get the reference of item view's
-            person = (TextView) itemView.findViewById(R.id.quote);
-            job = (TextView) itemView.findViewById(R.id.author);
+            quote = (TextView) itemView.findViewById(R.id.quote);
+            author = (TextView) itemView.findViewById(R.id.author);
         }
+    }
+
+    public void removeItem(int position) {
+        quotes.remove(position);
+        authors.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void restoreItem(String item, String item2, int position) {
+        quotes.add(position, item);
+        authors.add(position,item2);
+        notifyItemInserted(position);
+    }
+
+    public ArrayList<String> getQuotes() {
+        return quotes;
+    }
+
+    public ArrayList<String> getAuthors() {
+        return authors;
     }
 }
 
