@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="50dp"
+    android:paddingVertical="150dp"
     android:background="#ADFFF8"
     tools:context=".MainActivity">
 
@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="100dp"
         android:gravity="top|center"
         android:text="QuotePad"
         android:textColor="@color/black"

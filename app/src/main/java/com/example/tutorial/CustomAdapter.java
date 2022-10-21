@@ -21,8 +21,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.context = context;
         this.quotes = quotes;
         this.authors = authors;
-
-        Log.i("here","nopes");
     }
 
     @Override
